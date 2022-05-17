@@ -1,0 +1,49 @@
+dbus-excuse
+-----------
+
+The Bastard Operator From Hell excuse server that runs on `dbus',
+inspired by http://pages.cs.wisc.edu/~ballard/bofh/.
+
+BUILD
+
+	To install dependencies for the server, run "scripts/dep.sh".
+	This may need root permissions.
+
+	To build the server binary, run
+
+		$ make
+
+	... at the root of the repository. The binary will be
+	named "dbus-excuse".
+
+	To test the build binary inside a `dbus' sesson, run:
+
+		$ make test
+
+
+USAGE
+
+	The server can be started within a `dbus' session with:
+
+		$ make start
+
+	Sending messages to the server can be done via `dbus-send'.
+
+		# Make a RPC request to the server. The address of the bus
+		# can be obtained by parsing "/proc/<daemon-pid>/environ" to
+		# get the "DBUS_SESSION_BUS_ADDRESS" environment variable.
+
+		$ dbus-send --bus=${BUS_ADDR}" --print-reply \
+			--dest='org.bofh' '/' 'org.bofh.loop.excuse'
+
+		# Stop the server.
+		$ dbus-send --bus=${BUS_ADDR}" --print-reply \
+			--dest='org.bofh' '/' 'org.bofh.loop.stop'
+
+	To clean build artifacts and stale `dbus' sockets, run:
+
+		$ make clean
+
+WHY
+	Q: Why does this even exist?
+	A: I wanted to have some fun with `dbus'.
