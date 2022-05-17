@@ -1,7 +1,3 @@
-/*
- * dbus-excuse: A BOFH-style excuse server that runs on `dbus'.
- */
-
 #include "excuse.h"
 
 /* Return a random excuse. */

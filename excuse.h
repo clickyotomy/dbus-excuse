@@ -1,3 +1,7 @@
+/*
+ * dbus-excuse: A BOFH-style excuse server that runs on `dbus'.
+ */
+
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
