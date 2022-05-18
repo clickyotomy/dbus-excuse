@@ -4,6 +4,7 @@ dbus-excuse
 The Bastard Operator From Hell excuse server that runs on `dbus',
 inspired by http://pages.cs.wisc.edu/~ballard/bofh/.
 
+
 BUILD
 
 	To install dependencies for the server, run "scripts/dep.sh".
@@ -32,7 +33,6 @@ USAGE
 		# Make a RPC request to the server. The address of the bus
 		# can be obtained by parsing "/proc/<daemon-pid>/environ" to
 		# get the "DBUS_SESSION_BUS_ADDRESS" environment variable.
-
 		$ dbus-send --bus=${BUS_ADDR}" --print-reply \
 			--dest='org.bofh' '/' 'org.bofh.loop.excuse'
 
@@ -43,6 +43,7 @@ USAGE
 	To clean build artifacts and stale `dbus' sockets, run:
 
 		$ make clean
+
 
 WHY
 	Q: Why does this even exist?

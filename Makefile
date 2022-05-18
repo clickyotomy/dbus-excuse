@@ -41,5 +41,4 @@ clean:
 	$(DBUS_CLEAN)
 	/bin/rm -rf *~ *.o $(PROG_NAME)
 
-
 .PHONY: default format clean start test
